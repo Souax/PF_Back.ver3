@@ -20,14 +20,10 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-production:
-  <<: *default
-  database: db/production.sqlite3
-
 
 production:
   <<: *default
-  database: <%= ENV['DB_DATABASE'] %>
+  database: pf_back_ver3
   adapter: mysql2
   encoding: utf8mb4
   charset: utf8mb4
