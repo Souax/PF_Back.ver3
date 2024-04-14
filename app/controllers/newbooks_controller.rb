@@ -1,5 +1,5 @@
 class NewbooksController < ApplicationController
-  
+
     def newbook
         page = params[:page] || 1
         per = params[:per] || 5
@@ -10,7 +10,7 @@ class NewbooksController < ApplicationController
     def popularity
         page = params[:page] || 1
         per = params[:per] || 10
-        @popularity_books = RakutenWebService::Books::Book.search(booksGenreId: "001005017",sort:"reviewAverage" , page: page, hits: per)
+        @popularity_books = RakutenWebService::Books::Book.search(booksGenreId: "001005017", sort: "reviewAverage", minReviewCount: 10, page: page, hits: per)
         render json: { status: 'success', data: @popularity_books }
     end
 
