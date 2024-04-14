@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2024_04_14_101521) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
