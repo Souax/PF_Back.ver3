@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'homes#top'
   post 'auth/google/callback', to: 'users#create'
   resources :users, param: :email, only: [:show, :update, :destroy], constraints: { email: %r{[^/]+} }
   get '/search', to: 'books#search'
