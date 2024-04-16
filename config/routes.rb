@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#top'
-  post '/api/auth/callback/google', to: 'users#create'
+  post '/api/auth/signin/google', to: 'users#create'
   resources :users, param: :email, only: [:show, :update, :destroy], constraints: { email: %r{[^/]+} }
   get '/search', to: 'books#search'
   get '/base', to: 'books#base'
